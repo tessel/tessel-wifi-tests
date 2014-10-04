@@ -8,7 +8,7 @@ if (wifi.isConnected()){
     , password: process.argv[3]
     , security: process.argv[4]
   });
-  
+
   wifi.on('connect', function(){
     runTest();
   });  
@@ -27,7 +27,7 @@ function runTest(){
 
   // declare this here so that we have constant mem
   var memUsage = new Array(MAX); 
-  var maxMemDifference = 20000; // in bytes
+  var maxMemDifference = 30000; // in bytes
   var count = 0;
 
   var data = JSON.stringify({a: 200, b: "test", c: {d: "some data"}});
@@ -75,6 +75,8 @@ function runTest(){
               t.ok(true, "Mem usage was "+diff);
             }
             // end test
+            count = 0;
+
             t.end();
           }
         });
@@ -83,6 +85,8 @@ function runTest(){
     req.on('error', function(e) { 
       // not ok
       t.ok(false, "Problem with request: "+e.message);
+      count = 0;
+
       t.end();
     });
     
