@@ -1,0 +1,14 @@
+{
+  "name": "tessel-wifi-tests",
+  "version": "0.0.1",
+  "description": "Wifi tests for Tessel on Rampart",
+  "main": "index.js",
+  "scripts": {
+    "test": "tinytap -e 'tessel run {} ${WIFI_TEST_PORT}' test/*.js"
+  },
+  "dependencies": {
+    "tinytap": "~0.2.1",
+    "request": "~2.44.0",
+    "async": "~0.9.0"
+  }
+}
