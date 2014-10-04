@@ -3,6 +3,12 @@ var wifi = require('wifi-cc3000');
 if (wifi.isConnected()){
   runTest();
 } else {
+  wifi.connect({
+    ssid: process.argv[2]
+    , password: process.argv[3]
+    , security: process.argv[4]
+  });
+  
   wifi.on('connect', function(){
     runTest();
   });  

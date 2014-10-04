@@ -4,7 +4,7 @@
   "description": "Wifi tests for Tessel on Rampart",
   "main": "index.js",
   "scripts": {
-    "test": "tinytap -e 'tessel run {} ${WIFI_TEST_PORT}' test/*.js"
+    "test": "tinytap -e 'tessel run {} ${WIFI_NETWORK} ${WIFI_PASS} ${WIFI_SEC}' test/*.js"
   },
   "dependencies": {
     "tinytap": "~0.2.1",
